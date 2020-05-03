@@ -1,0 +1,243 @@
+$spacing: 10vh;
+
+$navbar-fill-dark: #335267;
+$dark-gray: #6c757d;
+$darkest-gray: #17344a;
+$light-gray: #ebf3f5;
+$lighter-gray: #f9fbfc;
+$lightest-gray: #ced4da;
+
+$search-bar-unfocused-gray: #f9fbfc;
+$search-bar-unfocused-outline-gray: #bccad4;
+$search-bar-focused-outline-gray: #728b9d;
+
+$rating-bar-gray: #dfe9ed;
+
+$pill-outline-gray: #d5dee4;
+$pill-fill-gray: #ebf3f5;
+$pill-fill-dark: #17344a;
+
+$btn-disabled-fill: #ebf3f5;
+$btn-disabled-txt: #17344a;
+
+$light-green: #82c91e;
+$dark-green: #66a80f;
+
+$btn-enabled-fill: #82c91e;
+$btn-enabled-hover: #66a80f;
+
+/* Navbar */
+
+.navbar {
+  background-color: $navbar-fill-dark;
+}
+
+/*Search Container
+Focused/Unfocused Elements */
+
+.not-focused {
+  background-color: $search-bar-unfocused-gray !important;
+  border-color: $search-bar-unfocused-outline-gray;
+}
+
+.focused {
+  background-color: white !important;
+  border-left-width: 0;
+  outline-color: $search-bar-focused-outline-gray;
+  box-shadow: none;
+}
+
+/* Search Bar body */
+input.form-control {
+  border-left-width: 0;
+  border-right-width: 0;
+  padding: 0;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: $lightest-gray;
+  }
+}
+
+/* Clear button and Search Button */
+
+span.input-group-text {
+  border-right-width: 0;
+}
+
+.input-group-append {
+  span.input-group-text {
+    border-right-width: 0;
+    border-left-width: 0;
+    color: blue;
+    cursor: pointer;
+  }
+
+  button.btn.btn-outline-secondary {
+    border-color: $lightest-gray;
+    background-image: linear-gradient(white, $lightest-gray);
+    color: $darkest-gray;
+    transition: background-image 0.15s ease-in-out,
+      background-color 0.15s ease-in-out;
+
+    &:hover {
+      background-image: none;
+      background-color: white;
+    }
+
+    &:active {
+      background: #e5e5e5;
+      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: inset 0px 0px 1px #c1c1c1;
+      outline: none;
+      color: $darkest-gray;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: none !important;
+    }
+  }
+}
+
+/* Nav pills */
+
+div.nav.nav-pills {
+  line-height: 1;
+
+  & a.nav-link.active {
+    background-color: $pill-fill-dark;
+    border-color: $pill-fill-dark;
+  }
+}
+
+a.nav-link {
+  color: $pill-fill-dark;
+  text-decoration: none;
+  background-color: transparent;
+  border: $pill-outline-gray solid 1px;
+  margin: 0 10px 0 0;
+  padding: 0.4rem 0.5rem;
+
+  &:hover {
+    color: $pill-fill-dark;
+    background-color: $pill-fill-gray;
+  }
+}
+
+/* Search Result Pills */
+
+div.card-pill.nav-item a.nav-link {
+  margin: 0;
+}
+
+/* General Div Spacing */
+
+.search-list {
+  margin-top: $spacing;
+}
+
+.search-container {
+  margin-top: $spacing;
+}
+
+/* Search Results [SearchCard > Poster, LinkButton, Rating] */
+
+/* Poster Images */
+img.card__img {
+  border-radius: 0;
+  box-shadow: 0px 0px 6px 4px $pill-outline-gray;
+  align-self: center;
+
+  &:hover {
+    box-shadow: 0px 0px 6px 3px $pill-fill-dark;
+  }
+}
+
+/* Trailer Button */
+a.btn.btn-info.card__button {
+  background-color: $btn-enabled-fill;
+  box-shadow: none;
+  border-color: $btn-enabled-fill;
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  outline: none;
+  padding: 10px 20px 10px 20px;
+  width: 10rem;
+
+  img {
+    //Makes the svg white
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(117deg)
+      brightness(101%) contrast(97%);
+
+    margin-right: 1rem;
+  }
+
+  &:active {
+    background-color: $btn-enabled-hover;
+    outline: none;
+    box-shadow: none;
+    border-color: $btn-enabled-hover;
+  }
+
+  &:hover {
+    background-color: $btn-enabled-hover;
+    outline: none;
+    box-shadow: none;
+    border-color: $btn-enabled-hover;
+  }
+
+  &.disabled {
+    background-color: $btn-disabled-fill;
+    border-color: $btn-disabled-fill;
+    color: $btn-disabled-txt;
+
+    img {
+      filter: invert(16%) sepia(94%) saturate(330%) hue-rotate(161deg)
+        brightness(94%) contrast(97%);
+    }
+  }
+
+  //maybe add media query here for centering on smaller screens;
+}
+
+/* Card Content Styling */
+
+div.list-group.list-group-flush {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+div.col-md-9 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  div.card__desc-body-title.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  div.movie-ratings.card__desc-body.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  div.card__desc-rate.col-md-4 {
+    margin-bottom: 10px;
+
+    div.progress {
+      height: 10px;
+    }
+  }
+
+  div.card__desc-trailer.col-md-8 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
