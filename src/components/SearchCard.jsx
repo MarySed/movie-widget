@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchShowTrailer, fetchMovieTrailer } from "../redux/actions";
+import { useSelector } from "react-redux";
 import { Card, Row, Col, Nav, ListGroupItem } from "react-bootstrap";
 import Pill from "./NavPill";
 import Rating from "./Rating";

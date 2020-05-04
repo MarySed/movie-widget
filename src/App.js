@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   setQuery,
   setDisplay,
-  setActors,
   fetchMovies,
   fetchMovieTrailer,
   fetchShowTrailer,
@@ -21,15 +20,7 @@ import NavPills from "./components/NavPills";
 //Bootstrap and Style
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.css";
-import {
-  Container,
-  InputGroup,
-  FormControl,
-  Button,
-  Card,
-  Nav,
-  Navbar,
-} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 import logo from "./assets/Logo.svg";
 import SiteNavbar from "./components/Navbar";
