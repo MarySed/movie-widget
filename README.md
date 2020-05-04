@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![movie_gif](https://user-images.githubusercontent.com/37863665/81014027-1e6eb880-8e97-11ea-94fe-229d2018603e.gif)
+
 
 # Setup Instructions:
 
