@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { ProgressBar, Col, Card } from "react-bootstrap";
 
 export default function Rating(props) {
-  //need to get rating number
-  //need to make function to multiply by 10
+  //Should probably have some sort of check here.
   const realRating = props.rating * 10;
 
   return (

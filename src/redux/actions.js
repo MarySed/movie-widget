@@ -38,7 +38,6 @@ export const fetchMovies = (input) => async (dispatch) => {
       `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=${input}&include_adult=false`
     );
 
-    console.log(result.data.results);
     if (result.data.results.length > 0) {
       dispatch(setMovies(result.data.results)); //Set the movies
       dispatch(setDisplay(result.data.results)); //Set the movies to be displayed as well
@@ -69,7 +68,6 @@ export const fetchShowTrailer = (input) => async (dispatch) => {
 };
 
 export const fetchMovieTrailer = (input) => async (dispatch) => {
-  let count = 0;
   try {
     const result = await axios.get(
       `https://api.themoviedb.org/3/movie/${input}/videos?api_key=${API_KEY}&language=en-US`

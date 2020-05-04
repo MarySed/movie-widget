@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 4. Or, if you want to check the production version, run `yarn build` and `yarn start` and go to http://localhost:5000 in your browser.
 
-I'll probably deploy this to Heroku as well.
+Check it out [here](https://movie-widget.herokuapp.com/) on Heroku.
 
 ## Scripts List
 
