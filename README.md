@@ -18,7 +18,7 @@ Check it out [here](https://movie-widget.herokuapp.com/) on Heroku.
 ### `yarn serve`
 
 Runs the app in the development mode.<br />
-Open port 3000 to see it.
+Open http://localhost:3000 to see it.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
@@ -29,4 +29,4 @@ Builds the app for production to the `build` folder.<br />
 
 ### `yarn start`
 
-Runs your built production app from the `build` folder on port 5000.
+Runs your production app from the `build` folder at http://localhost:5000.
