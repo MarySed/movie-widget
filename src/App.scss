@@ -19,9 +19,6 @@ $pill-fill-dark: #17344a;
 $btn-disabled-fill: #ebf3f5;
 $btn-disabled-txt: #17344a;
 
-$light-green: #82c91e;
-$dark-green: #66a80f;
-
 $btn-enabled-fill: #82c91e;
 $btn-enabled-hover: #66a80f;
 
@@ -80,9 +77,9 @@ span.input-group-text {
   button.btn.btn-outline-secondary {
     border-color: $lightest-gray;
     background-image: linear-gradient(white, $lightest-gray);
-    color: $darkest-gray;
-    transition: background-image 0.15s ease-in-out,
-      background-color 0.15s ease-in-out;
+    background-color: transparent;
+    color: $navbar-fill-dark;
+    width: 7rem;
 
     &:hover {
       background-image: none;
@@ -130,11 +127,20 @@ a.nav-link {
   }
 }
 
-/* Search Result Pills */
+/* Search Result Pill and Release Date */
 
 div.card__movie-pill.nav.nav-pills {
   a.nav-link {
     margin: 0px 0px 5px 0px;
+  }
+}
+
+div.card__desc-body-row.row {
+  max-width: 370px;
+  div.card__desc-date-col.col {
+    p.card-text {
+      margin: 3px 0 0 10px;
+    }
   }
 }
 
@@ -155,6 +161,7 @@ img.card__img {
   border-radius: 0;
   box-shadow: 0px 0px 6px 4px $pill-outline-gray;
   align-self: center;
+  transition: box-shadow 0.2s;
 
   &:hover {
     box-shadow: 0px 0px 6px 3px $pill-fill-dark;
@@ -227,6 +234,13 @@ div.col-md-9 {
     justify-content: flex-start;
   }
 
+  p.card__desc-mov.card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
   div.movie-ratings.card__desc-body.card-body {
     display: flex;
     flex-direction: column;
@@ -245,5 +259,29 @@ div.col-md-9 {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+  }
+}
+
+@media (max-width: 767.98px) {
+  /* Re-styling Pill/Date for small screens */
+  div.card__desc-body-row.row {
+    display: flex;
+    flex-direction: column;
+
+    div.card__desc-date-col.col {
+      p.card-text {
+        margin: 0;
+      }
+    }
+  }
+
+  /* Ratings Bar + Trailer Button */
+  div.col-md-9 div.card__desc-trailer.col-md-8 {
+    align-items: flex-start;
+  }
+
+  /* Search bar button */
+  .input-group-append button.btn.btn-outline-secondary {
+    width: 5rem;
   }
 }

@@ -56,11 +56,14 @@ export default function SearchCard({ movie, trailerHandler, actorHandler }) {
 
   //Render Either Date (some movies only had one or the other) or Gender
   const renderDateGender = () => {
+    let newDate;
     if (movie.first_air_date) {
-      return <Card.Text>Release Date: {movie.first_air_date}</Card.Text>;
+      newDate = movie.first_air_date.replace(/-/g, "/");
+      return <Card.Text>Release Date: {newDate}</Card.Text>;
     }
     if (movie.release_date) {
-      return <Card.Text>Release Date: {movie.release_date}</Card.Text>;
+      newDate = movie.release_date.replace(/-/g, "/");
+      return <Card.Text>Release Date: {newDate}</Card.Text>;
     }
     if (movie.gender === 2) {
       return <Card.Text>Gender: Male</Card.Text>;
@@ -92,7 +95,7 @@ export default function SearchCard({ movie, trailerHandler, actorHandler }) {
           <Card.Body className="card__desc-body-title">
             {renderTitle()}
             <Row className="card__desc-body-row">
-              <Col md={1} className="card__desc-pill-col">
+              <Col md={2} className="card__desc-pill-col">
                 <Nav variant="pills" className={"card__movie-pill"}>
                   {renderPill()}
                 </Nav>
@@ -105,23 +108,25 @@ export default function SearchCard({ movie, trailerHandler, actorHandler }) {
                 : bio}
             </Card.Text>
           </Card.Body>
-          <Card.Body className="movie-ratings card__desc-body">
-            <Row>
-              <Col md={4} className="card__desc-rate">
-                <Rating rating={movie.vote_average} />
-              </Col>
+          {movie.media_type !== "person" ? (
+            <Card.Body className="movie-ratings card__desc-body">
+              <Row>
+                <Col md={4} className="card__desc-rate">
+                  <Rating rating={movie.vote_average} />
+                </Col>
 
-              <Col md={8} className="card__desc-trailer">
-                <LinkButton
-                  url={url}
-                  id={movie.id}
-                  title={
-                    url !== undefined ? "Play Trailer" : "Trailer Unavailable"
-                  }
-                />
-              </Col>
-            </Row>
-          </Card.Body>
+                <Col md={8} className="card__desc-trailer">
+                  <LinkButton
+                    url={url}
+                    id={movie.id}
+                    title={
+                      url !== undefined ? "Play Trailer" : "Trailer Unavailable"
+                    }
+                  />
+                </Col>
+              </Row>
+            </Card.Body>
+          ) : null}
         </Col>
       </Row>
     </ListGroupItem>

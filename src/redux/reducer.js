@@ -1,12 +1,3 @@
-import {
-  SET_MOVIES,
-  SET_MOVIES_FAILURE,
-  SET_DISPLAY,
-  SET_TRAILER,
-  SET_TRAILER_FAILURE,
-  SET_QUERY,
-} from "./actions";
-
 const initialState = {
   movies: null,
   query: "",

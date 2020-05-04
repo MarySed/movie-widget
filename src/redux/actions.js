@@ -12,11 +12,6 @@ export const setMovies = (input) => ({
   input,
 });
 
-export const setMoviesFailure = (input) => ({
-  type: "SET_MOVIES_FAILURE",
-  input,
-});
-
 export const setQuery = (input) => ({
   type: "SET_QUERY",
   input,
@@ -37,11 +32,6 @@ export const setTrailer = (input) => ({
   input,
 });
 
-export const setTrailerFailure = (input) => ({
-  type: "SET_TRAILER_FAILURE",
-  input,
-});
-
 export const fetchMovies = (input) => async (dispatch) => {
   try {
     const result = await axios.get(
@@ -54,7 +44,7 @@ export const fetchMovies = (input) => async (dispatch) => {
       dispatch(setDisplay(result.data.results)); //Set the movies to be displayed as well
     }
   } catch (error) {
-    console.error("When fetching movies " + error);
+    console.error(`When fetching Movies ${error}`);
   }
 };
 
@@ -74,11 +64,12 @@ export const fetchShowTrailer = (input) => async (dispatch) => {
       return `https://www.youtube.com/watch?v=${result.data.results[0].key}`;
     }
   } catch (error) {
-    console.error(error);
+    console.error(`When fetching show trailers ${error}`);
   }
 };
 
 export const fetchMovieTrailer = (input) => async (dispatch) => {
+  let count = 0;
   try {
     const result = await axios.get(
       `https://api.themoviedb.org/3/movie/${input}/videos?api_key=${API_KEY}&language=en-US`
@@ -93,7 +84,7 @@ export const fetchMovieTrailer = (input) => async (dispatch) => {
       return `https://www.youtube.com/watch?v=${result.data.results[0].key}`;
     }
   } catch (error) {
-    console.error(error);
+    console.error(`When fetching movie trailers ${error}`);
   }
 };
 
@@ -105,11 +96,10 @@ export const fetchActorBio = (input) => async (dispatch) => {
     );
 
     if (result.data.biography) {
-      console.log(result.data.biography);
       dispatch(setActors(result.data.biography));
       return result.data.biography;
     }
   } catch (error) {
-    console.error(`When fetching bio ${error}`);
+    console.error(`When fetching bios ${error}`);
   }
 };
