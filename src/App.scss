@@ -42,7 +42,6 @@ Focused/Unfocused Elements */
 
 .focused {
   background-color: white !important;
-  border-left-width: 0;
   outline-color: $search-bar-focused-outline-gray;
   box-shadow: none;
 }
