@@ -8,7 +8,9 @@ export default function Rating(props) {
 
   return (
     <div>
-      <Card.Text>User Rating: {realRating}</Card.Text>
+      <Card.Text>
+        User Rating: <strong> {realRating}%</strong>{" "}
+      </Card.Text>
       <ProgressBar
         variant={
           realRating <= 39

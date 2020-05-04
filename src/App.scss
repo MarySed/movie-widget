@@ -154,7 +154,7 @@ div.card__desc-body-row.row {
   margin-top: $spacing;
 }
 
-/* Search Results [SearchCard > Poster, LinkButton, Rating] */
+/* Search Card: Poster, LinkButton, Rating */
 
 /* Poster Images */
 img.card__img {
@@ -217,7 +217,7 @@ a.btn.btn-info.card__button {
   //maybe add media query here for centering on smaller screens;
 }
 
-/* Card Content Styling */
+/* Rating and other Card Content Styling */
 
 div.list-group.list-group-flush {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
@@ -249,6 +249,12 @@ div.col-md-9 {
 
   div.card__desc-rate.col-md-4 {
     margin-bottom: 10px;
+
+    div p.card-text {
+      strong {
+        font-size: 20px;
+      }
+    }
 
     div.progress {
       height: 10px;
