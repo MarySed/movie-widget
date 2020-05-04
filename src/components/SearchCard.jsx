@@ -24,6 +24,8 @@ export default function SearchCard({ movie, trailerHandler, actorHandler }) {
 
     if (query !== "" && movie.media_type !== "person" && movie.poster_path) {
       //Filtering out results without an img, so I want to prevent unneeded api calls
+      console.log("Assign URL called");
+      console.log(query);
       assignURL();
     }
     if (movie.media_type === "person" && movie.profile_path) {

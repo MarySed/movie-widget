@@ -30,7 +30,7 @@ export default function NavPills({ movies, dispatchDisplay }) {
 
   return (
     <Nav variant="pills" defaultActiveKey="all">
-      <Pill eventKey={"all-link"} title={"All"} function={handleAllFilter} />
+      <Pill eventKey={"all"} title={"All"} function={handleAllFilter} />
       <Pill
         eventKey={"movies-link"}
         title={"Movies"}

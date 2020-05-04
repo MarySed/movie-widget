@@ -10,6 +10,8 @@ export default function SearchContainer({ query, dispatchQuery, fetchMovies }) {
     //On user query
     if (query !== "") {
       fetchMovies(query);
+      //Solved a fun bug where different displays = refetching movie trailers lol
+      dispatchQuery("");
     }
   }, [query]);
 
