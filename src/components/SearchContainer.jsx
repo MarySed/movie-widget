@@ -2,7 +2,12 @@ import React, { useState, useEffect } from "react";
 import { InputGroup, FormControl, Button } from "react-bootstrap";
 import searchIcon from "../assets/Icons-search.svg";
 
-export default function SearchContainer({ query, dispatchQuery, fetchMovies }) {
+export default function SearchContainer({
+  query,
+  dispatchQuery,
+  fetchMovies,
+  searchHandler,
+}) {
   const [searchTerm, setSearchTerm] = useState("");
   const [focus, setFocus] = useState(false);
 
@@ -10,8 +15,7 @@ export default function SearchContainer({ query, dispatchQuery, fetchMovies }) {
     //On user query
     if (query !== "") {
       fetchMovies(query);
-      //Solved a fun bug where different displays = refetching movie trailers lol
-      dispatchQuery("");
+      searchHandler(["movie", "tv", "person"]);
     }
   }, [query]);
 

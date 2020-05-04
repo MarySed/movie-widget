@@ -5,11 +5,11 @@ import { useSelector, useDispatch } from "react-redux";
 //Redux actions
 import {
   setQuery,
-  setDisplay,
   fetchMovies,
   fetchMovieTrailer,
   fetchShowTrailer,
   fetchActorBio,
+  setSearch,
 } from "./redux/actions";
 
 //Components
@@ -28,20 +28,23 @@ import SiteNavbar from "./components/Navbar";
 function App() {
   const query = useSelector((state) => state.query);
   const movies = useSelector((state) => state.movies);
-  const display = useSelector((state) => state.display);
+  const search = useSelector((state) => state.search);
 
   const dispatch = useDispatch();
 
-  const dispatchFetchMovies = (input) => {
+  const tabHandler = () => {
+    if (search.includes("movie") && search.includes("person")) {
+      return true;
+    }
+    return false;
+  };
+
+  const dispatchFetchMovies = async (input) => {
     dispatch(fetchMovies(input));
   };
 
   const dispatchQuery = (input) => {
     dispatch(setQuery(input));
-  };
-
-  const dispatchDisplay = (input) => {
-    dispatch(setDisplay(input));
   };
 
   const trailerHandler = async (input) => {
@@ -63,6 +66,10 @@ function App() {
     return result;
   };
 
+  const searchHandler = async (input) => {
+    dispatch(setSearch(input));
+  };
+
   return (
     <div className="App">
       <SiteNavbar logo={logo} />
@@ -72,18 +79,24 @@ function App() {
             query={query}
             dispatchQuery={dispatchQuery}
             fetchMovies={dispatchFetchMovies}
+            searchHandler={searchHandler}
           />
         </div>
 
         <div className="nav-pills">
-          <NavPills movies={movies} dispatchDisplay={dispatchDisplay} />
+          <NavPills
+            movies={movies}
+            searchHandler={searchHandler}
+            search={search}
+            tabHandler={tabHandler}
+          />
         </div>
 
         <div className="search-list">
           <SearchList
-            display={display}
             trailerHandler={trailerHandler}
             actorHandler={actorHandler}
+            movies={movies}
           />
         </div>
       </Container>

@@ -2,14 +2,14 @@ import React from "react";
 import { Spinner, ListGroup } from "react-bootstrap";
 import SearchCard from "./SearchCard";
 
-export default function SearchList({ display, trailerHandler, actorHandler }) {
+export default function SearchList({ trailerHandler, actorHandler, movies }) {
   return (
     <div>
-      {display === null ? (
+      {movies === null ? (
         <Spinner />
       ) : (
         <ListGroup variant="flush">
-          {display.map((movie, index) => {
+          {movies.map((movie, index) => {
             return (
               <SearchCard
                 movie={movie}

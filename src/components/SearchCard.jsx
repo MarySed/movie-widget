@@ -8,6 +8,8 @@ import Poster from "./Poster";
 
 export default function SearchCard({ movie, trailerHandler, actorHandler }) {
   const query = useSelector((state) => state.query);
+  const search = useSelector((state) => state.search);
+
   const [url, setURL] = useState("");
   const [bio, setBio] = useState("");
 
@@ -22,10 +24,8 @@ export default function SearchCard({ movie, trailerHandler, actorHandler }) {
       setBio(result);
     };
 
-    if (query !== "" && movie.media_type !== "person" && movie.poster_path) {
+    if (movie.media_type !== "person" && movie.poster_path) {
       //Filtering out results without an img, so I want to prevent unneeded api calls
-      console.log("Assign URL called");
-      console.log(query);
       assignURL();
     }
     if (movie.media_type === "person" && movie.profile_path) {
@@ -77,8 +77,8 @@ export default function SearchCard({ movie, trailerHandler, actorHandler }) {
   };
 
   //Remove search results with no poster provided
-  return movie.poster_path || movie.profile_path ? (
-    //Card Results
+  return (search.includes(movie.media_type) && movie.poster_path) ||
+    (search.includes(movie.media_type) && movie.profile_path) ? (
     <ListGroupItem className="card">
       <Row className="card__main-row no-gutters">
         <Col md={3} className="card__img-col">
