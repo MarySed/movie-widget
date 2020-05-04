@@ -7,9 +7,10 @@ import Rating from "./Rating";
 import LinkButton from "./LinkButton";
 import Poster from "./Poster";
 
-export default function SearchCard({ movie, trailerHandler }) {
+export default function SearchCard({ movie, trailerHandler, actorHandler }) {
   const query = useSelector((state) => state.query);
   const [url, setURL] = useState("");
+  const [bio, setBio] = useState("");
 
   useEffect(() => {
     const assignURL = async () => {
@@ -17,8 +18,18 @@ export default function SearchCard({ movie, trailerHandler }) {
       setURL(result);
     };
 
-    if (query !== "" && movie.media_type !== "person") {
+    const assignBio = async () => {
+      const result = await actorHandler(movie);
+      setBio(result);
+    };
+
+    if (query !== "" && movie.media_type !== "person" && movie.poster_path) {
+      //Filtering out results without an img, so I want to prevent unneeded api calls
       assignURL();
+    }
+    if (movie.media_type === "person" && movie.profile_path) {
+      //Filtering out results without an img so I want to prevent unneeded api calls
+      assignBio();
     }
   }, [query]);
 
@@ -44,7 +55,7 @@ export default function SearchCard({ movie, trailerHandler }) {
     return <Pill title={"Show"} />;
   };
 
-  //Render Either Date (there were too many options for this) or Gender
+  //Render Either Date (some movies only had one or the other) or Gender
   const renderDateGender = () => {
     if (movie.first_air_date) {
       return <Card.Text>Release Date: {movie.first_air_date}</Card.Text>;
@@ -83,11 +94,17 @@ export default function SearchCard({ movie, trailerHandler }) {
             {renderTitle()}
             <Row className="card__desc-body-row">
               <Col md={1} className="card__desc-pill-col">
-                <Nav variant="pills">{renderPill()}</Nav>
+                <Nav variant="pills" className={"card__movie-pill"}>
+                  {renderPill()}
+                </Nav>
               </Col>
               <Col className="card__desc-date-col">{renderDateGender()}</Col>
             </Row>
-            <Card.Text className="card__desc-mov">{movie.overview}</Card.Text>
+            <Card.Text className="card__desc-mov">
+              {movie.media_type === "movie" || movie.media_type === "tv"
+                ? movie.overview
+                : bio}
+            </Card.Text>
           </Card.Body>
           <Card.Body className="movie-ratings card__desc-body">
             <Row>
@@ -96,7 +113,13 @@ export default function SearchCard({ movie, trailerHandler }) {
               </Col>
 
               <Col md={8} className="card__desc-trailer">
-                <LinkButton url={url} id={movie.id} />
+                <LinkButton
+                  url={url}
+                  id={movie.id}
+                  title={
+                    url !== undefined ? "Play Trailer" : "Trailer Unavailable"
+                  }
+                />
               </Col>
             </Row>
           </Card.Body>

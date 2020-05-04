@@ -43,7 +43,7 @@ export default function LinkButton(props) {
       rel="noopener noreferrer"
     >
       <img src={playButton} alt="play button" width="15" />
-      Play Trailer
+      {props.title}
     </a>
   );
 }

@@ -7,7 +7,7 @@ export default function SiteNavbar(props) {
       <Navbar.Brand>
         <img
           src={props.logo}
-          className="d-inline-block align-top"
+          className="d-inline-block align-top navbar__logo"
           alt="Movie Widget logo"
         />
       </Navbar.Brand>

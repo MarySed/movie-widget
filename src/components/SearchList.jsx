@@ -2,7 +2,7 @@ import React from "react";
 import { Spinner, ListGroup, Container } from "react-bootstrap";
 import SearchCard from "./SearchCard";
 
-export default function SearchList({ display, trailerHandler }) {
+export default function SearchList({ display, trailerHandler, actorHandler }) {
   return (
     <div>
       {display === null ? (
@@ -15,6 +15,7 @@ export default function SearchList({ display, trailerHandler }) {
                 movie={movie}
                 key={movie.id}
                 trailerHandler={trailerHandler}
+                actorHandler={actorHandler}
               />
             );
           })}

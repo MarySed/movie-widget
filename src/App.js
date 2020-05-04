@@ -10,6 +10,7 @@ import {
   fetchMovies,
   fetchMovieTrailer,
   fetchShowTrailer,
+  fetchActorBio,
 } from "./redux/actions";
 
 //Components
@@ -55,10 +56,21 @@ function App() {
   const trailerHandler = async (input) => {
     let result;
     if (input.media_type === "movie") {
+      console.log("Movie fetched");
       result = await dispatch(fetchMovieTrailer(input.id));
     }
     if (input.media_type === "tv") {
+      console.log("TV fetched");
       result = await dispatch(fetchShowTrailer(input.id));
+    }
+    return result;
+  };
+
+  const actorHandler = async (input) => {
+    let result;
+    if (input.media_type === "person") {
+      console.log("Person fetched");
+      result = await dispatch(fetchActorBio(input.id));
     }
     return result;
   };
@@ -80,7 +92,11 @@ function App() {
         </div>
 
         <div className="search-list">
-          <SearchList display={display} trailerHandler={trailerHandler} />
+          <SearchList
+            display={display}
+            trailerHandler={trailerHandler}
+            actorHandler={actorHandler}
+          />
         </div>
       </Container>
     </div>

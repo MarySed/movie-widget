@@ -3,8 +3,7 @@ $spacing: 10vh;
 $navbar-fill-dark: #335267;
 $dark-gray: #6c757d;
 $darkest-gray: #17344a;
-$light-gray: #ebf3f5;
-$lighter-gray: #f9fbfc;
+
 $lightest-gray: #ced4da;
 
 $search-bar-unfocused-gray: #f9fbfc;
@@ -30,6 +29,10 @@ $btn-enabled-hover: #66a80f;
 
 .navbar {
   background-color: $navbar-fill-dark;
+
+  img.navbar__logo {
+    width: 250px;
+  }
 }
 
 /*Search Container
@@ -118,7 +121,7 @@ a.nav-link {
   text-decoration: none;
   background-color: transparent;
   border: $pill-outline-gray solid 1px;
-  margin: 0 10px 0 0;
+  margin: 10px 10px 10px 0;
   padding: 0.4rem 0.5rem;
 
   &:hover {
@@ -129,8 +132,10 @@ a.nav-link {
 
 /* Search Result Pills */
 
-div.card-pill.nav-item a.nav-link {
-  margin: 0;
+div.card__movie-pill.nav.nav-pills {
+  a.nav-link {
+    margin: 0px 0px 5px 0px;
+  }
 }
 
 /* General Div Spacing */
@@ -194,6 +199,7 @@ a.btn.btn-info.card__button {
     background-color: $btn-disabled-fill;
     border-color: $btn-disabled-fill;
     color: $btn-disabled-txt;
+    width: 13rem;
 
     img {
       filter: invert(16%) sepia(94%) saturate(330%) hue-rotate(161deg)

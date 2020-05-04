@@ -48,6 +48,7 @@ export const fetchMovies = (input) => async (dispatch) => {
       `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=${input}&include_adult=false`
     );
 
+    console.log(result.data.results);
     if (result.data.results.length > 0) {
       dispatch(setMovies(result.data.results)); //Set the movies
       dispatch(setDisplay(result.data.results)); //Set the movies to be displayed as well
@@ -63,7 +64,7 @@ export const fetchShowTrailer = (input) => async (dispatch) => {
       `https://api.themoviedb.org/3/tv/${input}/videos?api_key=${API_KEY}&language=en-US`
     );
 
-    if (result.data.results.length > 1) {
+    if (result.data.results.length > 0) {
       dispatch(
         setTrailer(
           `https://www.youtube.com/watch?v=${result.data.results[0].key}`
@@ -83,7 +84,7 @@ export const fetchMovieTrailer = (input) => async (dispatch) => {
       `https://api.themoviedb.org/3/movie/${input}/videos?api_key=${API_KEY}&language=en-US`
     );
 
-    if (result.data.results.length > 1) {
+    if (result.data.results.length > 0) {
       dispatch(
         setTrailer(
           `https://www.youtube.com/watch?v=${result.data.results[0].key}`
@@ -93,5 +94,22 @@ export const fetchMovieTrailer = (input) => async (dispatch) => {
     }
   } catch (error) {
     console.error(error);
+  }
+};
+
+export const fetchActorBio = (input) => async (dispatch) => {
+  try {
+    const result = await axios.get(
+      `https://api.themoviedb.org/3/person/${input}?api_key=${API_KEY}&language=en-US
+      `
+    );
+
+    if (result.data.biography) {
+      console.log(result.data.biography);
+      dispatch(setActors(result.data.biography));
+      return result.data.biography;
+    }
+  } catch (error) {
+    console.error(`When fetching bio ${error}`);
   }
 };
