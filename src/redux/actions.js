@@ -35,8 +35,8 @@ export const setTrailer = (input) => ({
 });
 
 export const fetchMovies = (input) => async (dispatch) => {
-  count++;
-  console.log("Fetch movies ran, and API calls are now at " + count + " calls");
+  /*count++;
+  console.log("Fetch movies ran, and API calls are now at " + count + " calls");*/
   try {
     const result = await axios.get(
       `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&language=en-US&query=${input}&include_adult=false`
@@ -52,10 +52,10 @@ export const fetchMovies = (input) => async (dispatch) => {
 };
 
 export const fetchShowTrailer = (input) => async (dispatch) => {
-  count++;
+  /*count++;
   console.log(
     "Fetch show trailer ran, and API calls are now at " + count + " calls"
-  );
+  );*/
   try {
     const result = await axios.get(
       `https://api.themoviedb.org/3/tv/${input}/videos?api_key=${API_KEY}&language=en-US`
@@ -76,10 +76,12 @@ export const fetchShowTrailer = (input) => async (dispatch) => {
 };
 
 export const fetchMovieTrailer = (input) => async (dispatch) => {
+  /*
   count++;
   console.log(
     "Fetch movie trailer ran, and API calls are now at " + count + " calls"
   );
+  */
   try {
     const result = await axios.get(
       `https://api.themoviedb.org/3/movie/${input}/videos?api_key=${API_KEY}&language=en-US`
