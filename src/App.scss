@@ -247,7 +247,7 @@ div.col-md-9 {
   }
 
   div.card__desc-rate.col-md-4 {
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
 
     div p.card-text {
       strong {
@@ -284,6 +284,10 @@ div.col-md-9 {
   /* Ratings Bar + Trailer Button */
   div.col-md-9 div.card__desc-trailer.col-md-8 {
     align-items: flex-start;
+  }
+
+  div.col-md-9 div.card__desc-rate.col-md-4 {
+    margin-bottom: 10px;
   }
 
   /* Search bar button */
