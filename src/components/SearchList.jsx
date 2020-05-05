@@ -2,7 +2,13 @@ import React from "react";
 import { Spinner, ListGroup, Container, Alert } from "react-bootstrap";
 import SearchCard from "./SearchCard";
 
-export default function SearchList({ trailerHandler, actorHandler, movies }) {
+export default function SearchList({
+  trailerHandler,
+  actorHandler,
+  movies,
+  search,
+  query,
+}) {
   return (
     <div>
       {movies === null ? (
@@ -16,6 +22,8 @@ export default function SearchList({ trailerHandler, actorHandler, movies }) {
                 key={movie.id}
                 trailerHandler={trailerHandler}
                 actorHandler={actorHandler}
+                search={search}
+                query={query}
               />
             );
           })}

@@ -108,6 +108,8 @@ function App() {
             trailerHandler={trailerHandler}
             actorHandler={actorHandler}
             movies={movies}
+            search={search}
+            query={query}
           />
         </div>
       </Container>

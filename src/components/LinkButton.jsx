@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import playButton from "../assets/play-solid.svg";
 //These were part of a solution to only call the video API on click.
 //import axios from "axios";

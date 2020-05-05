@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { Card, Row, Col, Nav, ListGroupItem } from "react-bootstrap";
 import Rating from "./Rating";
 import LinkButton from "./LinkButton";
 import Poster from "./Poster";
 
-export default function SearchCard({ movie, trailerHandler, actorHandler }) {
-  const query = useSelector((state) => state.query);
-  const search = useSelector((state) => state.search);
-
+export default function SearchCard({
+  movie,
+  trailerHandler,
+  actorHandler,
+  search,
+  query,
+}) {
   const [url, setURL] = useState("");
   const [bio, setBio] = useState("");
 
