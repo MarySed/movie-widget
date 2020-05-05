@@ -42,4 +42,4 @@ API Endpoints used are:
 
 I'm using two extra endpoints in order to match the project idea shown in the requirements section for this project.
 
-If there is a mismatch between API calls and results shown, it is because of client-side filtering of results with too little information.
+If there is a mismatch between API calls and results shown, it is because of client-side filtering of results with insufficient information.
