@@ -10,6 +10,7 @@ import {
   fetchShowTrailer,
   fetchActorBio,
   setSearch,
+  fetchTrending,
 } from "./redux/actions";
 
 //Components
@@ -47,6 +48,15 @@ function App() {
     dispatch(setQuery(input));
   };
 
+  const trendingHandler = async (input) => {
+    let result;
+    if (movies === null) {
+      result = await dispatch(fetchTrending());
+    }
+
+    return result;
+  };
+
   const trailerHandler = async (input) => {
     let result;
     if (input.media_type === "movie") {
@@ -80,6 +90,8 @@ function App() {
             dispatchQuery={dispatchQuery}
             fetchMovies={dispatchFetchMovies}
             searchHandler={searchHandler}
+            trendingHandler={trendingHandler}
+            movies={movies}
           />
         </div>
 

@@ -1,6 +1,5 @@
 ![movie_gif](https://user-images.githubusercontent.com/37863665/81014027-1e6eb880-8e97-11ea-94fe-229d2018603e.gif)
 
-
 # Setup Instructions:
 
 1. Run `yarn` to install dependencies.
@@ -30,3 +29,17 @@ Builds the app for production to the `build` folder.<br />
 ### `yarn start`
 
 Runs your production app from the `build` folder at http://localhost:5000.
+
+## Notes
+
+API Endpoints used are:
+
+- [The Movie Database Trending](https://developers.themoviedb.org/3/trending/get-trending) for Home screen.
+- [The Movie Database Multi Endpoint](https://developers.themoviedb.org/3/search/multi-search) for Search results.
+- [The Movie Database Movies Endpoint](https://developers.themoviedb.org/3/movies/get-movie-videos) for Movie trailers
+- [The Movie Database TV Endpoint](https://developers.themoviedb.org/3/tv/get-tv-videos) for TV trailers.
+- [The Movie Database People Endpoint](https://developers.themoviedb.org/3/people/get-person-details) for actor biographies.
+
+I'm using two extra endpoints in order to match the project idea shown in the requirements section for this project.
+
+If there is a mismatch between API calls and results shown, it is because of client-side filtering of results with too little information.

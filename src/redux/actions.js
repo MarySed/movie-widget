@@ -34,6 +34,24 @@ export const setSearch = (input) => ({
 
 // let count = 0;
 
+export const fetchTrending = (input) => async (dispatch) => {
+  // count++;
+  // console.log("API calls now number " + count);
+
+  try {
+    const result = await axios.get(
+      `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}`
+    );
+
+    const trending = result.data.results.slice(0, 5);
+    dispatch(setMovies(trending));
+
+    return result.data.results;
+  } catch (error) {
+    console.error(`When fetching trending ${error}`);
+  }
+};
+
 export const fetchMovies = (input) => async (dispatch) => {
   // count++;
   // console.log("API calls now number" + count);

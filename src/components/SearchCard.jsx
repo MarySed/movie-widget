@@ -75,7 +75,7 @@ export default function SearchCard({ movie, trailerHandler, actorHandler }) {
     return null;
   };
 
-  //Remove search results with no poster provided
+  //Remove search results with no poster provided, and implement client-side filter
   return (search.includes(movie.media_type) && movie.poster_path) ||
     (search.includes(movie.media_type) && movie.profile_path) ? (
     <ListGroupItem className="card">
