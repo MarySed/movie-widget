@@ -44,4 +44,4 @@ I'm using two extra endpoints in order to match the project idea shown in the re
 
 If there is a mismatch between API calls and results shown, it is because of client-side filtering of results with insufficient information.
 
-For reusability, I was curious if it meant reusability throughout the same project, or reusability in external projects. In case the focus was on external projects.
+For reusability, I was curious if it meant reusability throughout the same project, or reusability in external projects.
