@@ -87,7 +87,6 @@ function App() {
           <NavPills
             movies={movies}
             searchHandler={searchHandler}
-            search={search}
             tabHandler={tabHandler}
           />
         </div>

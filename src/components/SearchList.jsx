@@ -1,5 +1,5 @@
 import React from "react";
-import { Spinner, ListGroup } from "react-bootstrap";
+import { Spinner, ListGroup, Container, Alert } from "react-bootstrap";
 import SearchCard from "./SearchCard";
 
 export default function SearchList({ trailerHandler, actorHandler, movies }) {

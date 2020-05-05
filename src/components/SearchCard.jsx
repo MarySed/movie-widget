@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Card, Row, Col, Nav, ListGroupItem } from "react-bootstrap";
-import Pill from "./NavPill";
 import Rating from "./Rating";
 import LinkButton from "./LinkButton";
 import Poster from "./Poster";
@@ -48,12 +47,12 @@ export default function SearchCard({ movie, trailerHandler, actorHandler }) {
   //Render Movie/Show/Person Pill
   const renderPill = () => {
     if (movie.media_type === "person") {
-      return <Pill title={"Person"} />;
+      return <Nav.Link>Person</Nav.Link>;
     }
     if (movie.media_type === "movie") {
-      return <Pill title={"Movie"} />;
+      return <Nav.Link>Movie</Nav.Link>;
     }
-    return <Pill title={"Show"} />;
+    return <Nav.Link>Show</Nav.Link>;
   };
 
   //Render Either Date (some movies only had one or the other) or Gender
@@ -99,7 +98,7 @@ export default function SearchCard({ movie, trailerHandler, actorHandler }) {
             <Row className="card__desc-body-row">
               <Col md={2} className="card__desc-pill-col">
                 <Nav variant="pills" className={"card__movie-pill"}>
-                  {renderPill()}
+                  <Nav.Item>{renderPill()}</Nav.Item>
                 </Nav>
               </Col>
               <Col className="card__desc-date-col">{renderDateGender()}</Col>

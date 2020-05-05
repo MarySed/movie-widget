@@ -1,13 +1,7 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
-import Pill from "./NavPill";
 
-export default function NavPills({
-  movies,
-  searchHandler,
-  search,
-  tabHandler,
-}) {
+export default function NavPills({ movies, searchHandler, tabHandler }) {
   const handleAllFilter = () => {
     searchHandler(["movie", "tv", "person"]);
     tabHandler();
