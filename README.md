@@ -40,6 +40,8 @@ API Endpoints used are:
 - [The Movie Database TV Endpoint](https://developers.themoviedb.org/3/tv/get-tv-videos) for TV trailers.
 - [The Movie Database People Endpoint](https://developers.themoviedb.org/3/people/get-person-details) for actor biographies.
 
-I'm using two extra endpoints in order to match the project idea shown in the requirements section for this project.
+I'm using two extra endpoints in order to match the project idea shown in the requirements.
 
 If there is a mismatch between API calls and results shown, it is because of client-side filtering of results with insufficient information.
+
+For reusability, I was curious if it meant reusability throughout the same project, or reusability in external projects. In case the focus was on external projects.
