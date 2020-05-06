@@ -1,4 +1,4 @@
-![movie_gif](https://user-images.githubusercontent.com/37863665/81165584-2d578700-8fcd-11ea-98e6-7af12d85639e.gif)
+![movie_gif](https://user-images.githubusercontent.com/37863665/81173047-5f231a80-8fda-11ea-91ab-0919dcb7604a.gif)
 
 
 # Setup Instructions:
@@ -45,3 +45,7 @@ I'm using two extra endpoints in order to match the project idea shown in the re
 If there is a mismatch between API calls and results shown, it is because of extra calls to get actor biographies.
 
 For reusability, I was curious if it meant reusability throughout the same project, or reusability in external projects. I decided to design with external projects in mind, and tried to use props more than useSelector so components were not too closely tied to the specific redux store this project uses.
+
+### Tips:
+1. Search "Dwayne Johnson" to see not only some great movie examples but also what it looks like when text is shortened.
+2. This app is fully responsive, so feel free to look at it on your cellphone too.
