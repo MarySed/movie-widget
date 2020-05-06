@@ -1,10 +1,9 @@
 $spacing: 10vh;
 
 $navbar-fill-dark: #335267;
-$dark-gray: #6c757d;
-$darkest-gray: #17344a;
 
-$lightest-gray: #ced4da;
+$search-bar-darkest-gray: #17344a;
+$search-bar-lightest-gray: #ced4da;
 
 $search-bar-unfocused-gray: #f9fbfc;
 $search-bar-unfocused-outline-gray: #bccad4;
@@ -55,7 +54,7 @@ input.form-control {
   &:focus {
     outline: none;
     box-shadow: none;
-    border-color: $lightest-gray;
+    border-color: $search-bar-lightest-gray;
   }
 }
 
@@ -74,8 +73,8 @@ span.input-group-text {
   }
 
   button.btn.btn-outline-secondary {
-    border-color: $lightest-gray;
-    background-image: linear-gradient(white, $lightest-gray);
+    border-color: $search-bar-lightest-gray;
+    background-image: linear-gradient(white, $search-bar-lightest-gray);
     background-color: transparent;
     color: $navbar-fill-dark;
     width: 7rem;
@@ -91,7 +90,7 @@ span.input-group-text {
       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
       box-shadow: inset 0px 0px 1px #c1c1c1;
       outline: none;
-      color: $darkest-gray;
+      color: $search-bar-darkest-gray;
     }
 
     &:focus {
@@ -220,6 +219,14 @@ a.btn.btn-info.card__button {
 
 div.list-group.list-group-flush {
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+
+  .list-group-item {
+    padding: 3rem 0 3rem 0;
+  }
+
+  .card-body {
+    padding: 0 0 0 1.25rem;
+  }
 }
 
 div.col-md-9 {
@@ -235,7 +242,7 @@ div.col-md-9 {
 
   p.card__desc-mov.card-text {
     display: -webkit-box;
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -247,9 +254,8 @@ div.col-md-9 {
   }
 
   div.card__desc-rate.col-md-4 {
-    //margin-bottom: 10px;
-
     div p.card-text {
+      margin-bottom: 5px;
       strong {
         font-size: 20px;
       }
@@ -269,6 +275,13 @@ div.col-md-9 {
 }
 
 @media (max-width: 767.98px) {
+  /* Re-stying cards for small screens */
+  div.list-group.list-group-flush {
+    .card-body {
+      padding: 1.25rem;
+    }
+  }
+
   /* Re-styling Pill/Date for small screens */
   div.card__desc-body-row.row {
     display: flex;
@@ -276,7 +289,7 @@ div.col-md-9 {
 
     div.card__desc-date-col.col {
       p.card-text {
-        margin: 0;
+        margin: 5px 0 5px 0;
       }
     }
   }
