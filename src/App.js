@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="App">
       <SiteNavbar logo={logo} />
-      <Container fluid={true}>
+      <Container>
         <div className="search-container">
           <SearchContainer
             query={query}
