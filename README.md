@@ -41,6 +41,6 @@ API Endpoints used are:
 
 I'm using two extra endpoints in order to match the project idea shown in the requirements.
 
-If there is a mismatch between API calls and results shown, it is because of client-side filtering of results with insufficient information.
+If there is a mismatch between API calls and results shown, it is because of extra calls to get actor biographies.
 
 For reusability, I was curious if it meant reusability throughout the same project, or reusability in external projects. I decided to design with external projects in mind, and tried to use props more than useSelector so components were not too closely tied to the specific redux store this project uses.
