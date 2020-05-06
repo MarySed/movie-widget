@@ -1,6 +1,6 @@
 const initialState = {
   movies: null,
-  query: "",
+  query: "Lion King",
   actors: null,
   trailer: null,
   search: ["movie", "tv", "person"],

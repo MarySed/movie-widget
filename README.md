@@ -34,7 +34,6 @@ Runs your production app from the `build` folder at http://localhost:5000.
 
 API Endpoints used are:
 
-- [The Movie Database Trending](https://developers.themoviedb.org/3/trending/get-trending) for Home screen.
 - [The Movie Database Multi Endpoint](https://developers.themoviedb.org/3/search/multi-search) for Search results.
 - [The Movie Database Movies Endpoint](https://developers.themoviedb.org/3/movies/get-movie-videos) for Movie trailers
 - [The Movie Database TV Endpoint](https://developers.themoviedb.org/3/tv/get-tv-videos) for TV trailers.

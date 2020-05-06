@@ -8,7 +8,6 @@ export default function SearchContainer({
   fetchMovies,
   searchHandler,
   movies,
-  trendingHandler,
 }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [focus, setFocus] = useState(false);
@@ -18,9 +17,6 @@ export default function SearchContainer({
     if (query !== "") {
       fetchMovies(query);
       searchHandler(["movie", "tv", "person"]);
-    }
-    if (query === "" && movies === null) {
-      trendingHandler();
     }
   }, [query]);
 
