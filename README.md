@@ -40,7 +40,7 @@ API Endpoints used are:
 - [The Movie Database TV Endpoint](https://developers.themoviedb.org/3/tv/get-tv-videos) for TV trailers.
 - [The Movie Database People Endpoint](https://developers.themoviedb.org/3/people/get-person-details) for actor biographies.
 
-I'm using two extra endpoints in order to match the project idea shown in the requirements.
+I'm using one extra endpoint in order to match the project idea shown in the requirements.
 
 If there is a mismatch between API calls and results shown, it is because of extra calls to get actor biographies.
 
