@@ -1,6 +1,9 @@
 $spacing-search-list: 2vh;
 $spacing-search-bar: 10vh;
 
+$body-font-dark: #17344a;
+$body-font-light: #335267;
+
 $navbar-fill-dark: #335267;
 
 $search-bar-darkest-gray: #17344a;
@@ -21,6 +24,10 @@ $btn-disabled-txt: #17344a;
 
 $btn-enabled-fill: #82c91e;
 $btn-enabled-hover: #66a80f;
+
+body {
+  color: $body-font-dark;
+}
 
 /* Navbar */
 
@@ -139,6 +146,7 @@ div.card__desc-body-row.row {
   div.card__desc-date-col.col {
     p.card-text {
       margin: 3px 0 0 10px;
+      color: $body-font-light;
     }
   }
 }
@@ -245,6 +253,11 @@ div.col-md-9 {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  span.card__desc-title-date {
+    font-weight: 400;
+    color: $body-font-light;
   }
 
   p.card__desc-mov.card-text {

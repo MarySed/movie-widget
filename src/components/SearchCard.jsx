@@ -26,14 +26,34 @@ export default function SearchCard({
     };
 
     if (movie.media_type !== "person" && movie.poster_path) {
-      //Filtering out results without an img, so I want to prevent unneeded api calls
+      //No image = no API call for trailer.
       assignURL();
     }
     if (movie.media_type === "person" && movie.profile_path) {
-      //Filtering out results without an img so I want to prevent unneeded api calls
+      //No image = no API call for actor bio.
       assignBio();
     }
   }, [query]);
+
+  //Render (Date) for Title.
+  const renderTitleDate = () => {
+    if (movie.first_air_date) {
+      return (
+        <span className="card__desc-title-date">
+          {" "}
+          ({movie.first_air_date.slice(0, 4)})
+        </span>
+      );
+    }
+    if (movie.release_date) {
+      return (
+        <span className="card__desc-title-date">
+          {" "}
+          ({movie.release_date.slice(0, 4)})
+        </span>
+      );
+    }
+  };
 
   //Render Title
   const renderTitle = () => {
@@ -41,9 +61,19 @@ export default function SearchCard({
       return <Card.Title>{movie.name}</Card.Title>;
     }
     if (movie.original_name) {
-      return <Card.Title>{movie.original_name}</Card.Title>;
+      return (
+        <Card.Title>
+          {movie.original_name}
+          {renderTitleDate()}
+        </Card.Title>
+      );
     }
-    return <Card.Title>{movie.title}</Card.Title>;
+    return (
+      <Card.Title>
+        {movie.title}
+        {renderTitleDate()}
+      </Card.Title>
+    );
   };
 
   //Render Movie/Show/Person Pill
