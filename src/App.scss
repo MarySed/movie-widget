@@ -1,4 +1,5 @@
-$spacing: 10vh;
+$spacing-search-list: 2vh;
+$spacing-search-bar: 10vh;
 
 $navbar-fill-dark: #335267;
 
@@ -145,11 +146,11 @@ div.card__desc-body-row.row {
 /* General Div Spacing */
 
 .search-list {
-  margin-top: $spacing;
+  margin-top: $spacing-search-list;
 }
 
 .search-container {
-  margin-top: $spacing;
+  margin-top: $spacing-search-bar;
 }
 
 /* Search Card: Poster, LinkButton, Rating */
