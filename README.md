@@ -1,4 +1,5 @@
-![movie_gif](https://user-images.githubusercontent.com/37863665/81014027-1e6eb880-8e97-11ea-94fe-229d2018603e.gif)
+![movie_gif](https://user-images.githubusercontent.com/37863665/81165326-c2a64b80-8fcc-11ea-9f01-dc56529882b1.gif)
+
 
 # Setup Instructions:
 
